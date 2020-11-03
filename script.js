@@ -64,6 +64,12 @@ function generatePassword() {
     var chars = (chars + "\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~");
   };
 
+  // what if the user says no to all the password options?  if this happens, we must provide an error message and start over
+  if ((lowerCase) != true && (upperCase) != true && (symbols) != true && (numbers) != true) {
+    alert("You must select at least one criteria (uppercase, lowercase, numbers or symbols) for your password.  Please try again.");
+    return generatePassword();
+  }
+
   //console.log these values for debugging purposes
   console.log("Password Length: " + passwordLength);
   console.log("Contains Uppercase: " + upperCase);
@@ -75,7 +81,7 @@ function generatePassword() {
 
 // time to make the password.  
 //Make a for loop to add a random character to the password from the chars string created from the prompts above.  Repeat until the password is as long as the user requested.
-  for (i=1; i <= passwordLength; i++) {
+  for (i=0; i < passwordLength; i++) {
     //return a random character from the chars string
     var c = Math.floor(Math.random()*chars.length + 1);
     //append the returned character to the password
