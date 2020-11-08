@@ -6,6 +6,7 @@ A web app that will create a random password between 8 and 128 characters contai
 
 https://fainimous.github.io/PasswordGenerator/
 
+![Screenshot of the web application](/assets/PasswordGenerator.jpg?raw=true "Screenshot")
 
 ## Usage 
 
